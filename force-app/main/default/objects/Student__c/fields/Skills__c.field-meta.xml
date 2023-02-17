@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Skills__c</fullName>
+    <externalId>false</externalId>
+    <label>Skills</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <controllingField>State__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Angular</fullName>
+                <default>false</default>
+                <label>Angular</label>
+            </value>
+            <value>
+                <fullName>Bootstrap</fullName>
+                <default>false</default>
+                <label>Bootstrap</label>
+            </value>
+            <value>
+                <fullName>CSS</fullName>
+                <default>false</default>
+                <label>CSS</label>
+            </value>
+            <value>
+                <fullName>HTML</fullName>
+                <default>false</default>
+                <label>HTML</label>
+            </value>
+            <value>
+                <fullName>JavaScript</fullName>
+                <default>false</default>
+                <label>JavaScript</label>
+            </value>
+            <value>
+                <fullName>Jquery</fullName>
+                <default>false</default>
+                <label>Jquery</label>
+            </value>
+            <value>
+                <fullName>Mongo DB</fullName>
+                <default>false</default>
+                <label>Mongo DB</label>
+            </value>
+            <value>
+                <fullName>MySQL</fullName>
+                <default>false</default>
+                <label>MySQL</label>
+            </value>
+            <value>
+                <fullName>Node JS</fullName>
+                <default>false</default>
+                <label>Node JS</label>
+            </value>
+            <value>
+                <fullName>React JS</fullName>
+                <default>false</default>
+                <label>React JS</label>
+            </value>
+            <value>
+                <fullName>Vue JS</fullName>
+                <default>false</default>
+                <label>Vue JS</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Rajasthan</controllingFieldValue>
+            <controllingFieldValue>Tamil Nadu</controllingFieldValue>
+            <controllingFieldValue>Telangana</controllingFieldValue>
+            <controllingFieldValue>Bihar</controllingFieldValue>
+            <controllingFieldValue>Delhi</controllingFieldValue>
+            <controllingFieldValue>Gujrat</controllingFieldValue>
+            <controllingFieldValue>Madhyapradesh</controllingFieldValue>
+            <controllingFieldValue>Maharashtra</controllingFieldValue>
+            <valueName>CSS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rajasthan</controllingFieldValue>
+            <controllingFieldValue>Tamil Nadu</controllingFieldValue>
+            <controllingFieldValue>Bihar</controllingFieldValue>
+            <controllingFieldValue>Delhi</controllingFieldValue>
+            <controllingFieldValue>Gujrat</controllingFieldValue>
+            <controllingFieldValue>Maharashtra</controllingFieldValue>
+            <valueName>HTML</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rajasthan</controllingFieldValue>
+            <controllingFieldValue>Tamil Nadu</controllingFieldValue>
+            <controllingFieldValue>Bihar</controllingFieldValue>
+            <controllingFieldValue>Delhi</controllingFieldValue>
+            <controllingFieldValue>Gujrat</controllingFieldValue>
+            <controllingFieldValue>Kerala</controllingFieldValue>
+            <controllingFieldValue>Kolkata</controllingFieldValue>
+            <controllingFieldValue>Madhyapradesh</controllingFieldValue>
+            <controllingFieldValue>Maharashtra</controllingFieldValue>
+            <controllingFieldValue>Orrisa</controllingFieldValue>
+            <valueName>JavaScript</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rajasthan</controllingFieldValue>
+            <controllingFieldValue>Tamil Nadu</controllingFieldValue>
+            <controllingFieldValue>Telangana</controllingFieldValue>
+            <controllingFieldValue>Andhra</controllingFieldValue>
+            <controllingFieldValue>Karnataka</controllingFieldValue>
+            <controllingFieldValue>Orrisa</controllingFieldValue>
+            <valueName>Node JS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Rajasthan</controllingFieldValue>
+            <controllingFieldValue>Telangana</controllingFieldValue>
+            <controllingFieldValue>Andhra</controllingFieldValue>
+            <controllingFieldValue>Gujrat</controllingFieldValue>
+            <controllingFieldValue>Karnataka</controllingFieldValue>
+            <controllingFieldValue>Kolkata</controllingFieldValue>
+            <valueName>Vue JS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tamil Nadu</controllingFieldValue>
+            <controllingFieldValue>Telangana</controllingFieldValue>
+            <controllingFieldValue>Delhi</controllingFieldValue>
+            <controllingFieldValue>Kolkata</controllingFieldValue>
+            <controllingFieldValue>Maharashtra</controllingFieldValue>
+            <controllingFieldValue>Orrisa</controllingFieldValue>
+            <valueName>Bootstrap</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tamil Nadu</controllingFieldValue>
+            <controllingFieldValue>Telangana</controllingFieldValue>
+            <controllingFieldValue>Karnataka</controllingFieldValue>
+            <controllingFieldValue>Kerala</controllingFieldValue>
+            <controllingFieldValue>Madhyapradesh</controllingFieldValue>
+            <controllingFieldValue>Maharashtra</controllingFieldValue>
+            <valueName>Mongo DB</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Telangana</controllingFieldValue>
+            <controllingFieldValue>Karnataka</controllingFieldValue>
+            <controllingFieldValue>Kerala</controllingFieldValue>
+            <controllingFieldValue>Kolkata</controllingFieldValue>
+            <controllingFieldValue>Madhyapradesh</controllingFieldValue>
+            <controllingFieldValue>Maharashtra</controllingFieldValue>
+            <valueName>Jquery</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Andhra</controllingFieldValue>
+            <controllingFieldValue>Delhi</controllingFieldValue>
+            <valueName>Angular</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Andhra</controllingFieldValue>
+            <controllingFieldValue>Gujrat</controllingFieldValue>
+            <controllingFieldValue>Karnataka</controllingFieldValue>
+            <controllingFieldValue>Kolkata</controllingFieldValue>
+            <controllingFieldValue>Orrisa</controllingFieldValue>
+            <valueName>React JS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Karnataka</controllingFieldValue>
+            <controllingFieldValue>Kerala</controllingFieldValue>
+            <controllingFieldValue>Madhyapradesh</controllingFieldValue>
+            <controllingFieldValue>Maharashtra</controllingFieldValue>
+            <controllingFieldValue>Orrisa</controllingFieldValue>
+            <valueName>MySQL</valueName>
+        </valueSettings>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

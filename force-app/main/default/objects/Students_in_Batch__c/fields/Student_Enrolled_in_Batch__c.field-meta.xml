@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Student_Enrolled_in_Batch__c</fullName>
+    <externalId>false</externalId>
+    <label>Student Enrolled in Batch</label>
+    <referenceTo>Student__c</referenceTo>
+    <relationshipLabel>Students in Batches</relationshipLabel>
+    <relationshipName>Students_in_Batches</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

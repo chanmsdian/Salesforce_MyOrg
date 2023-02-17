@@ -1,0 +1,44 @@
+<template>
+    <section>
+        <h2 class="section_heading slds-var-m-around_medium">{details.HEADING}</h2>
+        <div>
+            <ul class="slds-var-m-around_medium">
+                <template for:each={details.LIST} for:item="list">
+                    <li key={list.NAME} class="slds-var-m-bottom_medium">
+                        <div class="slds-grid">
+                            <template if:true={details.ICON}>
+                                <img src={details.ICON} alt="Education image" width="20px" height="15px" 
+                                class="slds-var-m-right_xx-small"/>
+                            </template>
+                            <div class="fontWeight700 font14">{list.NAME}
+                                <template if:true={list.LEVEL}>
+                                    <span class="subText font14"> ({list.LEVEL})</span>
+                                </template>
+                            </div>
+                        </div>
+                        <template if:true={list.UNIVERSITY_NAME}>
+                            <div class="uni_name">{list.UNIVERSITY_NAME}</div>
+                        </template>
+                        <template if:true={list.DURATION}>
+                            <div class="subText">{list.DURATION}</div>
+                        </template>
+                        <template if:true={list.CGPA}>
+                            <div class="subtext">{list.CGPA}</div>
+                        </template>
+                    </li>
+                </template>
+                <template for:each={details.CERT_LIST} for:item="certitem">
+                    <li key={certitem.NAME} class="slds-var-m-bottom_medium slds-var-m-left_medium">
+                        <div class="slds-grid">
+                            <template if:true={certitem.ICON}>
+                                <img src={certitem.ICON} alt="Certification image" width="50px" height="50px" 
+                                class="slds-var-m-right_xx-small"/>
+                            </template>
+                            <div class="fontWeight700 font14 pad20">{certitem.NAME}</div>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </section>
+</template>

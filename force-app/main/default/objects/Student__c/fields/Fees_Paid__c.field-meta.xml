@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fees_Paid__c</fullName>
+    <description>To check the fees paid by the student</description>
+    <externalId>false</externalId>
+    <inlineHelpText>To check the fees paid by the student</inlineHelpText>
+    <label>Fees Paid</label>
+    <precision>18</precision>
+    <required>true</required>
+    <scale>3</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,18 @@
+body{
+  margin: 0;
+}
+.price {
+  color: green;
+  font-weight: bold;
+}
+.Name
+{
+  color: darkblue;
+  font-weight: bolder;
+
+}
+.description
+{
+  color: darkcyan;
+  font-size: medium;
+}

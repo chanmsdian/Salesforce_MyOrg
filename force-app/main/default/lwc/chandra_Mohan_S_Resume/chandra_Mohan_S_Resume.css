@@ -1,0 +1,14 @@
+.wrapper
+{
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+.header_color
+{
+    background-color: #F0F6FC;
+    color:#293E6A ;
+}
+.split
+{
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px;
+}

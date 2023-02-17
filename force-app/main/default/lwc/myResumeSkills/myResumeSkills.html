@@ -1,0 +1,17 @@
+<template>
+    <section>
+        <h2 class="section_heading">{details.HEADING}</h2>
+        <div>
+            <template for:each={details.SKILLS} for:item="skill">
+                <div key={skill.HEADING} class="slds-var-m-top_medium">
+                    <h3 class="section_subHeading">{skill.HEADING}</h3>
+                    <template for:each={skill.SKILLS_LIST} for:item="skillList">
+                        <div key={skillList.NAME} class="slds-var-m-top_x-small inline">
+                            <div class="subText fontWeight700">{skillList.NAME}</div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </section>
+</template>

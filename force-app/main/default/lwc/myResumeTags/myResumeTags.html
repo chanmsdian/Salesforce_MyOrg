@@ -1,0 +1,8 @@
+<template>
+    <div class="slds-var-m-around_medium" >
+        <h3 class={isHeading}>{heading}</h3>
+        <template for:each={tagList} for:item="tag">
+            <div key={tag} class="tags">{tag}</div>
+        </template>
+    </div>
+</template>
