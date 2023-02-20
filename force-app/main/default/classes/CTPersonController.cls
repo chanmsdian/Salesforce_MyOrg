@@ -70,12 +70,10 @@ public with sharing class CTPersonController
     }
     public Static Set<Id> getNeighbours(Set<Id> personIds)
     {
-        List<String> healthStatuses = new List<String>{'Green','Yellow'};
         List<People_Tracing__c> peoplaTraces = [SELECT Person_1__c, Person_2__c FROM People_Tracing__c
                                                 WHERE (Person_1__c IN :personIds OR Person_2__c IN :personIds)
                                                 AND Contact_Type__c = 'Neighbour'
                                                 AND (Person_1__r.Health_Status__c = 'Green' OR Person_2__r.Health_Status__c = 'Green')];
-
 
         Set<Id> neighbours = new Set<Id>();
         for(People_Tracing__c pt : peoplaTraces)
@@ -91,5 +89,48 @@ public with sharing class CTPersonController
         }
         return neighbours;
     }
-    
+    public Static Set<Id> getPrimaryContacts(Set<Id> personIds)
+    {
+        List<String> healthStatuses = new List<String>{'Green','Yellow'};
+        List<People_Tracing__c> peoplaTraces = [SELECT Person_1__c, Person_2__c FROM People_Tracing__c
+                                                WHERE (Person_1__c IN :personIds OR Person_2__c IN :personIds)
+                                                AND Contact_Type__c = 'Other'
+                                                AND Contact_Date__c = LAST_N_DAYS:10
+                                                AND (Person_1__r.Health_Status__c IN :healthStatuses OR Person_2__r.Health_Status__c IN :healthStatuses)];
+        Set<Id> primaryContacts = new Set<Id>();
+        for(People_Tracing__c pt : peoplaTraces)
+        {
+            if(personIds.contains(pt.Person_1__c))
+            {
+                primaryContacts.add(pt.Person_1__c);
+            }
+            if(personIds.contains(pt.Person_2__c))
+            {
+                primaryContacts.add(pt.Person_2__c);
+            }
+        }
+        return primaryContacts;
+    }
+    public Static Set<Id> getSecondaryContacts(Set<Id> primaryContactsId)
+    {
+        List<String> healthStatuses = new List<String>{'Green','Yellow'};
+        List<People_Tracing__c> peoplaTraces = [SELECT Person_1__c, Person_2__c FROM People_Tracing__c
+                                                WHERE (Person_1__c IN :primaryContactsId OR Person_2__c IN :primaryContactsId)
+                                                AND Contact_Type__c = 'Other'
+                                                AND Contact_Date__c = LAST_N_DAYS:10
+                                                AND (Person_1__r.Health_Status__c IN :healthStatuses OR Person_2__r.Health_Status__c IN :healthStatuses)];
+        Set<Id> secondaryContacts = new Set<Id>();
+        for(People_Tracing__c pt : peoplaTraces)
+        {
+            if(primaryContactsId.contains(pt.Person_1__c))
+            {
+                secondaryContacts.add(pt.Person_1__c);
+            }
+            if(primaryContactsId.contains(pt.Person_2__c))
+            {
+                secondaryContacts.add(pt.Person_2__c);
+            }
+        }
+        return secondaryContacts;
+    }     
 }
