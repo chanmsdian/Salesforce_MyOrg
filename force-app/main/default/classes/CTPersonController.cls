@@ -68,4 +68,28 @@ public with sharing class CTPersonController
         }
         return cohabitants;
     }
+    public Static Set<Id> getNeighbours(Set<Id> personIds)
+    {
+        List<String> healthStatuses = new List<String>{'Green','Yellow'};
+        List<People_Tracing__c> peoplaTraces = [SELECT Person_1__c, Person_2__c FROM People_Tracing__c
+                                                WHERE (Person_1__c IN :personIds OR Person_2__c IN :personIds)
+                                                AND Contact_Type__c = 'Neighbour'
+                                                AND (Person_1__r.Health_Status__c = 'Green' OR Person_2__r.Health_Status__c = 'Green')];
+
+
+        Set<Id> neighbours = new Set<Id>();
+        for(People_Tracing__c pt : peoplaTraces)
+        {
+            if(personIds.contains(pt.Person_1__c))
+            {
+                neighbours.add(pt.Person_1__c);
+            }
+            if(personIds.contains(pt.Person_2__c))
+            {
+                neighbours.add(pt.Person_2__c);
+            }
+        }
+        return neighbours;
+    }
+    
 }
