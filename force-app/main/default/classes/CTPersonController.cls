@@ -45,7 +45,7 @@ public with sharing class CTPersonController
         }
         return healthCounpMap;
     }
-    public Static Set<Id> getCohabitants(Set<Id> personIds)
+    public Static Set<Id> getCohabitants(Set<Id> personIds, set<Id> alreadyProcessed)
     {
         List<String> healthStatuses = new List<String>{'Green','Yellow'};
         List<People_Tracing__c> peoplaTraces = [SELECT Person_1__c, Person_2__c FROM People_Tracing__c
@@ -57,18 +57,21 @@ public with sharing class CTPersonController
         Set<Id> cohabitants = new Set<Id>();
         for(People_Tracing__c pt : peoplaTraces)
         {
-            if(personIds.contains(pt.Person_1__c))
+            if(alreadyProcessed.contains(pt.Person_1__c))
             {
                 cohabitants.add(pt.Person_1__c);
+                alreadyProcessed.add(pt.Person_1__c);
             }
-            if(personIds.contains(pt.Person_2__c))
+            if(alreadyProcessed.contains(pt.Person_2__c))
             {
                 cohabitants.add(pt.Person_2__c);
+                alreadyProcessed.add(pt.Person_2__c);
+
             }
         }
         return cohabitants;
     }
-    public Static Set<Id> getNeighbours(Set<Id> personIds)
+    public Static Set<Id> getNeighbours(Set<Id> personIds, set<Id> alreadyProcessed)
     {
         List<People_Tracing__c> peoplaTraces = [SELECT Person_1__c, Person_2__c FROM People_Tracing__c
                                                 WHERE (Person_1__c IN :personIds OR Person_2__c IN :personIds)
@@ -78,18 +81,21 @@ public with sharing class CTPersonController
         Set<Id> neighbours = new Set<Id>();
         for(People_Tracing__c pt : peoplaTraces)
         {
-            if(personIds.contains(pt.Person_1__c))
+            if(alreadyProcessed.contains(pt.Person_1__c))
             {
                 neighbours.add(pt.Person_1__c);
+                alreadyProcessed.add(pt.Person_1__c);
             }
-            if(personIds.contains(pt.Person_2__c))
+            if(alreadyProcessed.contains(pt.Person_2__c))
             {
                 neighbours.add(pt.Person_2__c);
+                alreadyProcessed.add(pt.Person_2__c);
+
             }
         }
         return neighbours;
     }
-    public Static Set<Id> getPrimaryContacts(Set<Id> personIds)
+    public Static Set<Id> getPrimaryContacts(Set<Id> personIds, set<Id> alreadyProcessed)
     {
         List<String> healthStatuses = new List<String>{'Green','Yellow'};
         List<People_Tracing__c> peoplaTraces = [SELECT Person_1__c, Person_2__c FROM People_Tracing__c
@@ -100,18 +106,21 @@ public with sharing class CTPersonController
         Set<Id> primaryContacts = new Set<Id>();
         for(People_Tracing__c pt : peoplaTraces)
         {
-            if(personIds.contains(pt.Person_1__c))
+            if(alreadyProcessed.contains(pt.Person_1__c))
             {
                 primaryContacts.add(pt.Person_1__c);
+                alreadyProcessed.add(pt.Person_1__c);
             }
-            if(personIds.contains(pt.Person_2__c))
+            if(alreadyProcessed.contains(pt.Person_2__c))
             {
                 primaryContacts.add(pt.Person_2__c);
+                alreadyProcessed.add(pt.Person_2__c);
+
             }
         }
         return primaryContacts;
     }
-    public Static Set<Id> getSecondaryContacts(Set<Id> primaryContactsId)
+    public Static Set<Id> getSecondaryContacts(Set<Id> primaryContactsId, set<Id> alreadyProcessed)
     {
         List<String> healthStatuses = new List<String>{'Green','Yellow'};
         List<People_Tracing__c> peoplaTraces = [SELECT Person_1__c, Person_2__c FROM People_Tracing__c
@@ -122,13 +131,16 @@ public with sharing class CTPersonController
         Set<Id> secondaryContacts = new Set<Id>();
         for(People_Tracing__c pt : peoplaTraces)
         {
-            if(primaryContactsId.contains(pt.Person_1__c))
+            if(alreadyProcessed.contains(pt.Person_1__c))
             {
                 secondaryContacts.add(pt.Person_1__c);
+                alreadyProcessed.add(pt.Person_1__c);
             }
-            if(primaryContactsId.contains(pt.Person_2__c))
+            if(alreadyProcessed.contains(pt.Person_2__c))
             {
                 secondaryContacts.add(pt.Person_2__c);
+                alreadyProcessed.add(pt.Person_2__c);
+
             }
         }
         return secondaryContacts;
